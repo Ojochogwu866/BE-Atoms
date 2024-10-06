@@ -1,16 +1,15 @@
-import { Request, Response, NextFunction } from 'express';
-import { logger } from '../utils/logger';
+import { Request, Response, NextFunction } from "express";
+import { logger } from "../utils/logger";
 
 export class ApplicationError extends Error {
     statusCode: number;
 
     constructor(message: string, statusCode: number) {
-        super(message);
-        this.statusCode = statusCode;
+        super(message)
+        this.statusCode = statusCode
     }
 }
 
-// This should return the actual error-handling middleware function
 export const errorHandler = (
     err: Error,
     req: Request,
@@ -19,7 +18,7 @@ export const errorHandler = (
 ) => {
     logger.error(err);
 
-    if (err instanceof ApplicationError) {
+    if(err instanceof ApplicationError) {
         return res.status(err.statusCode).json({
             status: 'error',
             message: err.message
@@ -29,39 +28,5 @@ export const errorHandler = (
     return res.status(500).json({
         status: 'error',
         message: 'Internal server error'
-    });
-};
-
-
-// import { Response } from "express";
-// import { logger } from "../utils/logger";
-
-// export class ApplicationError extends Error {
-//     statusCode: number;
-
-//     constructor(message: string, statusCode: number) {
-//         super(message);
-//         this.statusCode = statusCode;
-//     }
-// }
-
-// export const errorHandler = () => {
-//     return (
-//         err: Error,
-//         res: Response,
-//     ) => {
-//         logger.error(err);
-        
-//         if (err instanceof ApplicationError) {
-//             return res.status(err.statusCode).json({
-//                 status: 'error',
-//                 message: err.message
-//             });
-//         }
-        
-//         return res.status(500).json({
-//             status: 'error',
-//             message: 'Internal server error'
-//         });
-//     };
-// };
+    })
+}

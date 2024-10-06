@@ -1,4 +1,5 @@
 import express from 'express';
+import { authMiddleware, restrictTo } from '../middlewares/auth'
 import {
     createProduct,
     getProducts,
@@ -11,13 +12,17 @@ import {
 
 const router = express.Router();
 
-router.post('/', createProduct);
 router.get('/', getProducts);
 router.get('/:id', getProduct);
-router.patch('/:id', updateProduct);
-router.delete('/:id', deleteProduct);
 
 router.get('/categories', getCategories);
 router.get('/category/:category', getProductsByCategory);
+
+router.use(authMiddleware);
+router.use(restrictTo('admin', 'superuser'));
+
+router.post('/', createProduct);
+router.patch('/:id', updateProduct);
+router.delete('/:id', deleteProduct);
 
 export default router;

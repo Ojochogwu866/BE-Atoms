@@ -2,7 +2,8 @@ import express, { Application } from 'express'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
 import cors from 'cors'
-import { errorHandler, rateLimiterMiddleware } from './middlewares'
+import { errorHandler } from './middlewares/errorHandler'
+import { rateLimiterMiddleware } from './middlewares/rateLimiter'
 import {productRoutes, authRoutes, cartRoutes} from './routes';
 import { logger } from './utils/logger';
 import { connectDatabase } from './config/database'
