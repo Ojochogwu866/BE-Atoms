@@ -1,14 +1,14 @@
 import express from 'express';
-import { authMiddleware, restrictTo } from '../middlewares/auth'
 import {
-    createProduct,
-    getProducts,
-    getProduct,
-    getCategories,
-    getProductsByCategory,
-    updateProduct,
-    deleteProduct
+	createProduct,
+	deleteProduct,
+	getCategories,
+	getProduct,
+	getProducts,
+	getProductsByCategory,
+	updateProduct,
 } from '../controllers/productControllers';
+import { authMiddleware, restrictTo } from '../middlewares/auth';
 
 const router = express.Router();
 
