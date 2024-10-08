@@ -1,5 +1,5 @@
+require('dotenv').config()
 import cors from 'cors';
-import dotenv from 'dotenv';
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import { connectDatabase } from './config/database';
@@ -7,8 +7,6 @@ import { errorHandler } from './middlewares/errorHandler';
 import { rateLimiterMiddleware } from './middlewares/rateLimiter';
 import { authRoutes, cartRoutes, productRoutes } from './routes';
 import { logger } from './utils/logger';
-
-dotenv.config();
 
 const app: Application = express();
 

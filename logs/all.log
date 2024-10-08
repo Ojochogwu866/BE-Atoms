@@ -46,3 +46,38 @@
 2024-10-07 09:35:25:3525 [32minfo[39m: [32mServer is running on port 3000[39m
 2024-10-07 09:38:56:3856 [32minfo[39m: [32mConnected to MongoDB[39m
 2024-10-07 09:38:56:3856 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 18:49:18:4918 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 18:49:18:4918 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 18:52:39:5239 [31merror[39m: [31mNot authorized to create superuser[39m
+2024-10-08 18:54:52:5452 [31merror[39m: [31mNot authorized to create superuser[39m
+2024-10-08 18:55:39:5539 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 18:55:39:5539 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 18:56:08:568 [31merror[39m: [31mNot authorized to create superuser[39m
+2024-10-08 18:57:28:5728 [31merror[39m: [31mNot authorized to create superuser[39m
+2024-10-08 19:02:48:248 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:02:48:248 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:02:56:256 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:03:33:333 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:03:33:333 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:04:08:48 [31merror[39m: [31mSuperuser already exists[39m
+2024-10-08 19:04:32:432 [31merror[39m: [31mExpected double-quoted property name in JSON at position 67[39m
+2024-10-08 19:05:06:56 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:05:06:56 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:05:33:533 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:05:52:552 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:06:21:621 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:06:21:621 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:06:37:637 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:07:30:730 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:07:30:730 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:08:12:812 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:09:45:945 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:09:45:945 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:28:27:2827 [31merror[39m: [31mNo token provided[39m
+2024-10-08 19:29:02:292 [31merror[39m: [31mSuperuser already exists[39m
+2024-10-08 19:29:14:2914 [31merror[39m: [31msecretOrPrivateKey must have a value[39m
+2024-10-08 19:55:03:553 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-08 19:55:03:553 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-08 19:56:03:563 [31merror[39m: [31mNo token provided[39m
+2024-10-08 19:56:53:5653 [31merror[39m: [31mNo token provided[39m
+2024-10-08 19:57:41:5741 [31merror[39m: [31mNo token provided[39m
