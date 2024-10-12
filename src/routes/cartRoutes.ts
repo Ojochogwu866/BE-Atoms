@@ -14,6 +14,6 @@ router.use(authMiddleware);
 router.get('/', getCart);
 router.post('/add', addToCart);
 router.delete('/remove/:productId', removeFromCart);
-// router.delete('/clear', clearCart);
+router.delete('/clear', clearCart);
 
 export default router;

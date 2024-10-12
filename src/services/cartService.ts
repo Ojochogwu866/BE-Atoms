@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { ApplicationError } from '../middlewares/errorHandler';
 import Cart, { ICart } from '../models/Cart';
 
@@ -18,15 +19,16 @@ export const addToCart = async (
 	if (!cart) {
 		cart = await Cart.create({ user: userId, items: [] });
 	}
+	const productObjectId = new mongoose.Types.ObjectId(productId);
 
 	const existingItem = cart.items.find(
-		(item) => item.product.toString() === productId
+		(item) => item.product.toString() === productObjectId.toString()
 	);
 
 	if (existingItem) {
 		existingItem.quantity += quantity;
 	} else {
-		cart.items.push({ product: productId, quantity });
+		cart.items.push({ product: productObjectId, quantity });
 	}
 
 	await cart.save();
