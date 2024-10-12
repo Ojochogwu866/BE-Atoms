@@ -21,10 +21,10 @@ export const signup = async (
 		throw new ApplicationError('Email already in use', 400);
 	}
 	const user = await User.create({ email, password, role });
-	const token = generateToken(user._id);
+	const token = generateToken(user._id.toString()); 
 	return {
 		user: {
-			id: user._id,
+			id: user._id.toString(),
 			email: user.email,
 			role: user.role,
 		},
@@ -40,10 +40,10 @@ export const signIn = async (
 	if (!user || !(await user.comparePassword(password))) {
 		throw new ApplicationError('Invalid email or password', 401);
 	}
-	const token = generateToken(user._id);
+	const token = generateToken(user._id.toString());
 	return {
 		user: {
-			id: user._id,
+			id: user._id.toString(),
 			email: user.email,
 			role: user.role,
 		},
