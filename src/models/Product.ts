@@ -16,7 +16,7 @@ const ProductSchema: Schema = new Schema(
 		price: { type: String, required: true },
 		category: { type: String, required: true },
 		rating: { type: String, required: true },
-		images: [{ type: String }],
+		images: { type: String, required: true },
 	},
 	{ timestamps: true }
 );

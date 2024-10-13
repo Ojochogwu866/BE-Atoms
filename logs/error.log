@@ -25,3 +25,6 @@
 2024-10-12 22:36:49:3649 [31merror[39m: [31mNo token provided[39m
 2024-10-12 22:37:07:377 [31merror[39m: [31mNo token provided[39m
 2024-10-12 22:37:07:377 [31merror[39m: [31mNo token provided[39m
+2024-10-13 00:09:52:952 [31merror[39m: [31mError Creating Product[39m
+2024-10-13 01:05:21:521 [31merror[39m: [31mread ECONNRESET[39m
+2024-10-13 01:05:22:522 [31merror[39m: [31mread ECONNRESET[39m

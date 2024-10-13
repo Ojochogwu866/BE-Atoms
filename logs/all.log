@@ -131,3 +131,16 @@
 2024-10-12 23:29:26:2926 [32minfo[39m: [32mServer is running on port 3000[39m
 2024-10-12 23:29:34:2934 [32minfo[39m: [32mConnected to MongoDB[39m
 2024-10-12 23:29:34:2934 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-12 23:33:47:3347 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-12 23:33:47:3347 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-13 00:03:16:316 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-13 00:03:16:316 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-13 00:04:34:434 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-13 00:04:34:434 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-13 00:04:46:446 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-13 00:04:46:446 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-13 00:09:52:952 [31merror[39m: [31mError Creating Product[39m
+2024-10-13 01:05:21:521 [31merror[39m: [31mread ECONNRESET[39m
+2024-10-13 01:05:22:522 [31merror[39m: [31mread ECONNRESET[39m
+2024-10-13 01:28:49:2849 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-13 01:28:49:2849 [32minfo[39m: [32mServer is running on port 3000[39m

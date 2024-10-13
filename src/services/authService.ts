@@ -21,7 +21,7 @@ export const signup = async (
 		throw new ApplicationError('Email already in use', 400);
 	}
 	const user = await User.create({ email, password, role });
-	const token = generateToken(user._id.toString()); 
+	const token = generateToken(user._id.toString());
 	return {
 		user: {
 			id: user._id.toString(),
