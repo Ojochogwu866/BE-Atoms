@@ -144,3 +144,16 @@
 2024-10-13 01:05:22:522 [31merror[39m: [31mread ECONNRESET[39m
 2024-10-13 01:28:49:2849 [32minfo[39m: [32mConnected to MongoDB[39m
 2024-10-13 01:28:49:2849 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-10-13 19:03:14:314 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-10-13 19:03:14:314 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-11-02 00:34:38:3438 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-02 00:34:38:3438 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-11-02 00:46:00:460 [31merror[39m: [31mInvalid email or password[39m
+2024-11-02 17:54:14:5414 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-02 17:54:14:5414 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-11-02 17:55:00:550 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-02 17:55:00:550 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-11-02 17:55:10:5510 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-02 17:55:10:5510 [32minfo[39m: [32mServer is running on port 3000[39m
+2024-11-02 17:55:28:5528 [32minfo[39m: [32mConnected to MongoDB[39m
+2024-11-02 17:55:28:5528 [32minfo[39m: [32mServer is running on port 3000[39m
