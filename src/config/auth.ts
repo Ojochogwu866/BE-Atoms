@@ -1,6 +1,5 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-// Throw an error if JWT_SECRET is not defined
 if (!process.env.JWT_SECRET) {
 	throw new Error('JWT_SECRET must be defined in environment variables');
 }

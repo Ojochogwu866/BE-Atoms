@@ -17,7 +17,7 @@ app.use(rateLimiterMiddleware());
 
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/carts', cartRoutes);
+app.use('/api/cart', cartRoutes);
 
 app.use(errorHandler);
 
