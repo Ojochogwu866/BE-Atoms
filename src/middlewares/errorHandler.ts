@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import { logger } from '../utils/logger';
 
 export class ApplicationError extends Error {
@@ -7,26 +7,29 @@ export class ApplicationError extends Error {
 	constructor(message: string, statusCode: number) {
 		super(message);
 		this.statusCode = statusCode;
+		Object.setPrototypeOf(this, ApplicationError.prototype);
 	}
 }
 
-export const errorHandler = (
+export const errorHandler: ErrorRequestHandler = (
 	err: Error,
-	req: Request,
+	_req: Request,
 	res: Response,
-	next: NextFunction
-) => {
+	_next: NextFunction
+): void => {
 	logger.error(err);
 
 	if (err instanceof ApplicationError) {
-		return res.status(err.statusCode).json({
+		res.status(err.statusCode).json({
 			status: 'error',
 			message: err.message,
 		});
+		return;
 	}
 
-	return res.status(500).json({
+	res.status(500).json({
 		status: 'error',
 		message: 'Internal server error',
 	});
+	return;
 };
