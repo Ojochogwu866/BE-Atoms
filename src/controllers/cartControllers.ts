@@ -1,18 +1,21 @@
-import { NextFunction, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { AuthRequest } from '../middlewares/auth';
 import { ApplicationError } from '../middlewares/errorHandler';
 import * as cartService from '../services/cartService';
 
 export const getCart = async (
-	req: AuthRequest,
+	req: AuthRequest & Request,
 	res: Response,
 	next: NextFunction
 ) => {
 	try {
 		const userId = req.userId;
-		if (!userId) throw new ApplicationError('User not authenticated', 401);
+		const sessionId = req.session.id;
 
-		const cart = await cartService.getCartByUserId(userId);
+		const cart = userId
+			? await cartService.getCartByUserId(userId)
+			: await cartService.getCartBySessionId(sessionId);
+
 		res.status(200).json({
 			status: 'success',
 			data: { cart },
@@ -23,6 +26,39 @@ export const getCart = async (
 };
 
 export const addToCart = async (
+    req: AuthRequest & Request,
+    res: Response,
+    next: NextFunction
+) => {
+    try {
+        const userId = req.userId;
+        const sessionId = req.session?.id;
+
+        if (!userId && !sessionId) {
+            throw new ApplicationError('Invalid session', 400);
+        }
+
+        const { productId, quantity } = req.body;
+
+        if (!productId || !quantity) {
+            throw new ApplicationError('Product ID and quantity are required', 400);
+        }
+
+        const cart = userId
+            ? await cartService.addToCart(userId, productId, quantity)
+            : await cartService.addToGuestCart(sessionId, productId, quantity);
+
+        res.status(200).json({
+            status: 'success',
+            data: { cart },
+        });
+    } catch (error) {
+        console.error('Cart controller error:', error);
+        next(error);
+    }
+};
+
+export const mergeGuestCart = async (
 	req: AuthRequest,
 	res: Response,
 	next: NextFunction
@@ -31,11 +67,12 @@ export const addToCart = async (
 		const userId = req.userId;
 		if (!userId) throw new ApplicationError('User not authenticated', 401);
 
-		const { productId, quantity } = req.body;
-		const cart = await cartService.addToCart(userId, productId, quantity);
+		const sessionId = req.session.id;
+		const mergedCart = await cartService.mergeGuestCart(sessionId, userId);
+
 		res.status(200).json({
 			status: 'success',
-			data: { cart },
+			data: { cart: mergedCart },
 		});
 	} catch (error) {
 		next(error);
