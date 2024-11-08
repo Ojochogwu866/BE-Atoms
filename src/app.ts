@@ -5,19 +5,21 @@ import helmet from 'helmet';
 import { connectDatabase } from './config/database';
 import { errorHandler } from './middlewares/errorHandler';
 import { rateLimiterMiddleware } from './middlewares/rateLimiter';
+import { sessionMiddleware } from './middlewares/sessionHandler';
 import { authRoutes, cartRoutes, productRoutes } from './routes';
 import { logger } from './utils/logger';
 
 const app: Application = express();
 
 app.use(express.json());
+app.use(sessionMiddleware);
 app.use(helmet());
 app.use(cors());
 app.use(rateLimiterMiddleware());
 
+app.use('/api/cart', cartRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/cart', cartRoutes);
 
 app.use(errorHandler);
 
